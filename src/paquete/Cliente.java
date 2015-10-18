@@ -7,10 +7,11 @@ public class Cliente{
 	//Declaraciones.
 	static Scanner sc = new Scanner(System.in);
 	
-	public static void main(String[] args){
+	//Esto está solo para hacer pruebas de funcionamiento.
+	//public static void main(String[] args){
 	
-			System.out.println(Datos());
-	}
+			//System.out.println(Datos());
+	//}
 	
 	//Solicita los datos del cliente para enviárselos al servidor.
 	public static String Datos(){
