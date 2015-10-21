@@ -3,18 +3,31 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+/**
+ * Esta clase controla la lectura de humedad.
+ * @author David
+ */
+
 public class Humedad{
 	
-	//Declaración de los parametros.
+	/**
+	 * Representa la lectura de humedad.
+	 */
 	protected double humedad;
 	
-	//Paso de valores a los parámetros.
+	/**
+	 * Pasa valores al parámetro humedad.
+	 * @param h Lectura de humedad.
+	 */
 	public Humedad(double h){
 		
 		this.humedad=h;
 	}
 	
-	//Leo una cadena de bytes y los paso a valores.
+	/**
+	 * Leo una cadena de entrada y lo paso a valores de humedad.
+	 * @param Stream de datos de entrada.
+	 */
 	public Humedad(DataInputStream dis){
 		
 		try{
@@ -27,7 +40,10 @@ public class Humedad{
 		}
 	}
 	
-	//Escribe el parámetro como 4 bytes.
+	/**
+	 * Convierte un cadena de salida a un ByteArray.
+	 * @param dos Cadena de datos de salida.
+	 */
 	public void toByteArray (DataOutputStream dos){
 		
 		try{
@@ -39,7 +55,9 @@ public class Humedad{
 		}
 	}
 	
-	//Convierte los datos numéricos en un String.
+	/**
+	 * Convierte los datos numéricos de humedad a un String.
+	 */
 	public String toString(){
 		
 		return Double.toString(humedad);

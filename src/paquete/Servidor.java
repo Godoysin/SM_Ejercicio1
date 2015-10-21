@@ -4,17 +4,29 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * Esta clase gestiona el comportamiento del servidor.
+ * @author David
+ */
+
 public class Servidor{
 	
 	//Posibles utilidades
 	//Scanner sc = new Scanner(System.in);
 	//List<String> lista = new ArrayList<String>();
 	
-	//Declaraciones
+	/**
+	 * Representa los datos que recibe el servidor.
+	 */
 	protected String datos = "";
+	/**
+	 * Representa los mensajes que recibe el servidor.
+	 */
 	protected String mensaje = "";
 	
-	//Maquina de estados
+	/**
+	 * Maquina de estados que gestiona el funcionamiento del servidor.
+	 */
 	public void Maquina(){
 		
 		//Funciones locales
@@ -109,8 +121,11 @@ public class Servidor{
 		
 	}
 	
-	//Comprueba la validez del usuario y clave introducidos
-	//comparándolos con la base de datos.
+	/**
+	 * Comprueba la validez del usuario y clave introducidos.
+	 * @param datos Datos que ha recibido el servidor.
+	 * @return True si es exitosa, False si no lo es.
+	 */
 	public Boolean Autentificar(String datos){
 		
 		//Funciones locales.
@@ -124,7 +139,10 @@ public class Servidor{
 		return autentificar;
 	}
 	
-	//Esta es la función que regula los servicios que el cliente puede pedir al servidor.
+	/**
+	 * Esta es la función que regula los servicios que el cliente puede pedir al servidor.
+	 * @return El servicio solicitado.
+	 */
 	public String Elegir(){
 		
 		String funcion = "";
@@ -139,7 +157,9 @@ public class Servidor{
 		return funcion;
 	}
 	
-	//Función del primer servicio
+	/**
+	 * Función del primer servicio.
+	 */
 	public void Servicio1(){
 		
 		//Lo primero que hago siempre es recibir el mensaje del cliente.
@@ -149,7 +169,9 @@ public class Servidor{
 		//En función de lo que se procese, actuar en consecuencia.
 	}
 	
-	//Función del segundo servicio
+	/**
+	 * Función del segundo servicio.
+	 */
 	public void Servicio2(){
 		
 		//Lo primero que hago siempre es recibir el mensaje del cliente.
@@ -159,7 +181,10 @@ public class Servidor{
 		//En función de lo que se procese, actuar en consecuencia.
 	}
 	
-	//Esta clase pregunta al cliente si quiere volver a usar el servio, usar otro o salir.
+	/**
+	 * Esta clase pregunta al cliente si quiere volver a usar el servio, usar otro o salir.
+	 * @return True si desea repetir, False si desea salir.
+	 */
 	public Boolean Repetir(){
 		
 		Boolean repetir = false;
@@ -185,18 +210,21 @@ public class Servidor{
 		return repetir;
 	}
 	
-	//Envía datos al cliente
-	//TODO revisar la entrada y salida de parámetros.
+	/**
+	 * Envía datos al cliente.
+	 * @param datos Datos que desea enviar el servidor.
+	 */
 	public void Enviar(String datos){
 			
 	}
 		
-	//Recive datos del cliente.
-	//TODO revisar la entrada y salida de parámetros.
+	/**
+	 * Recive datos del cliente.
+	 * @param mensaje Mensaje que recibe del cliente.
+	 */
 	public void Recibir(String mensaje){
 		
 		this.datos=mensaje;
 	}
-	
 	
 }

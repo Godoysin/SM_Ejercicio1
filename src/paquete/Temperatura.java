@@ -3,18 +3,31 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+/**
+ * Esta clase controla la lectura de temperatura.
+ * @author David
+ */
+
 public class Temperatura{
 	
-	//Declaración de los parametros.
+	/**
+	 * Representa la lectura de temperatura.
+	 */
 	protected int temperatura;
 	
-	//Paso de valores a los parámetros.
+	/**
+	 * Pasa valores al parámetro humedad.
+	 * @param h Lectura de humedad.
+	 */
 	public Temperatura(int t){
 		
 		this.temperatura=t;
 	}
 	
-	//Leo una cadena de bytes y los paso a valores.
+	/**
+	 * Leo una cadena de entrada y lo paso a valores de temperatura.
+	 * @param Stream de datos de entrada.
+	 */
 	public Temperatura(DataInputStream dis){
 		
 		try{
@@ -27,7 +40,10 @@ public class Temperatura{
 		}
 	}
 	
-	//Escribe cadael parámetro como 4 bytes.
+	/**
+	 * Convierte un cadena de salida a un ByteArray.
+	 * @param dos Cadena de datos de salida.
+	 */
 	public void toByteArray(DataOutputStream dos){
 		
 		try{
@@ -39,7 +55,9 @@ public class Temperatura{
 		}
 	}
 	
-	//Convierte los datos numéricos en un String.
+	/**
+	 * Convierte los datos numéricos de temperatura a un String.
+	 */
 	public String toString(){
 		
 		return Integer.toString(temperatura);
